@@ -1,6 +1,7 @@
 services:
   - type: web
     name: job-tracker
+    plan: free
     runtime: python
     buildCommand: bash build.sh
     startCommand: gunicorn config.wsgi:application
