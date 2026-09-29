@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+    {% if edit_mode %}
+        Edit Application
+    {% else %}
+        Add Application
+    {% endif %}
+
+    - Job Tracker
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body p-4">
+
+                <h2 class="fw-bold mb-4">
+
+                    {% if edit_mode %}
+                        Edit Job Application
+                    {% else %}
+                        Add Job Application
+                    {% endif %}
+
+                </h2>
+
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+
+                    {% if form.non_field_errors %}
+
+                        <div class="alert alert-danger">
+
+                            {{ form.non_field_errors }}
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <!-- Company -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="{{ form.company_name.id_for_label }}"
+                            class="form-label fw-semibold"
+                        >
+                            Company Name
+                        </label>
+
+                        {{ form.company_name }}
+
+                        {% if form.company_name.errors %}
+
+                            <div class="text-danger small mt-1">
+                                {{ form.company_name.errors }}
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- Job Title -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="{{ form.job_title.id_for_label }}"
+                            class="form-label fw-semibold"
+                        >
+                            Job Title
+                        </label>
+
+                        {{ form.job_title }}
+
+                        {% if form.job_title.errors %}
+
+                            <div class="text-danger small mt-1">
+                                {{ form.job_title.errors }}
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- Job URL -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="{{ form.job_url.id_for_label }}"
+                            class="form-label fw-semibold"
+                        >
+                            Job URL
+                        </label>
+
+                        {{ form.job_url }}
+
+                        {% if form.job_url.errors %}
+
+                            <div class="text-danger small mt-1">
+                                {{ form.job_url.errors }}
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- Location -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="{{ form.location.id_for_label }}"
+                            class="form-label fw-semibold"
+                        >
+                            Location
+                        </label>
+
+                        {{ form.location }}
+
+                        {% if form.location.errors %}
+
+                            <div class="text-danger small mt-1">
+                                {{ form.location.errors }}
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- Employment Type -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="{{ form.employment_type.id_for_label }}"
+                            class="form-label fw-semibold"
+                        >
+                            Employment Type
+                        </label>
+
+                        {{ form.employment_type }}
+
+                    </div>
+
+
+                    <!-- Status -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="{{ form.status.id_for_label }}"
+                            class="form-label fw-semibold"
+                        >
+                            Status
+                        </label>
+
+                        {{ form.status }}
+
+                    </div>
+
+
+                    <!-- Dates -->
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label
+                                for="{{ form.application_date.id_for_label }}"
+                                class="form-label fw-semibold"
+                            >
+                                Application Date
+                            </label>
+
+                            {{ form.application_date }}
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label
+                                for="{{ form.interview_date.id_for_label }}"
+                                class="form-label fw-semibold"
+                            >
+                                Interview Date
+                            </label>
+
+                            {{ form.interview_date }}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Salary -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="{{ form.salary.id_for_label }}"
+                            class="form-label fw-semibold"
+                        >
+                            Salary
+                        </label>
+
+                        {{ form.salary }}
+
+                    </div>
+
+
+                    <!-- Notes -->
+
+                    <div class="mb-3">
+
+                        <label
+                            for="{{ form.notes.id_for_label }}"
+                            class="form-label fw-semibold"
+                        >
+                            Notes
+                        </label>
+
+                        {{ form.notes }}
+
+                    </div>
+
+
+                    <!-- Buttons -->
+
+                    <div class="mt-4">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+
+                            {% if edit_mode %}
+                                Update Application
+                            {% else %}
+                                Add Application
+                            {% endif %}
+
+                        </button>
+
+
+                        <a
+                            href="{% url 'application_list' %}"
+                            class="btn btn-outline-secondary ms-2"
+                        >
+                            Cancel
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

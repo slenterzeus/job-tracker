@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}
+Job Tracker - Manage Your Job Search
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row align-items-center min-vh-75">
+
+    <!-- Hero Text -->
+
+    <div class="col-lg-7">
+
+        <span class="badge bg-primary mb-3">
+            Job Search Management
+        </span>
+
+        <h1 class="display-4 fw-bold">
+
+            Organize Your
+            <span class="text-primary">
+                Job Search
+            </span>
+
+        </h1>
+
+        <p class="lead text-muted mt-3">
+
+            Keep track of your job applications, interviews,
+            offers and application progress in one simple dashboard.
+
+        </p>
+
+
+        <div class="mt-4">
+
+            <a
+                href="{% url 'register' %}"
+                class="btn btn-primary btn-lg me-2"
+            >
+                Get Started
+            </a>
+
+            <a
+                href="{% url 'login' %}"
+                class="btn btn-outline-secondary btn-lg"
+            >
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Feature Preview -->
+
+    <div class="col-lg-5 mt-5 mt-lg-0">
+
+        <div class="card shadow-lg">
+
+            <div class="card-body p-4">
+
+                <h5 class="fw-bold mb-4">
+                    Your Job Search
+                </h5>
+
+
+                <div class="d-flex justify-content-between mb-3">
+
+                    <span>
+                        Applications
+                    </span>
+
+                    <span class="badge bg-primary">
+                        24
+                    </span>
+
+                </div>
+
+
+                <div class="d-flex justify-content-between mb-3">
+
+                    <span>
+                        Interviews
+                    </span>
+
+                    <span class="badge bg-warning text-dark">
+                        5
+                    </span>
+
+                </div>
+
+
+                <div class="d-flex justify-content-between mb-3">
+
+                    <span>
+                        Offers
+                    </span>
+
+                    <span class="badge bg-success">
+                        2
+                    </span>
+
+                </div>
+
+
+                <hr>
+
+
+                <div class="text-center">
+
+                    <small class="text-muted">
+                        Track your progress from application
+                        to offer.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Features -->
+
+<div class="row g-4 mt-5">
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h4>
+                    📊 Track Applications
+                </h4>
+
+                <p class="text-muted">
+                    Keep all your job applications organized
+                    in one place.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h4>
+                    📅 Manage Interviews
+                </h4>
+
+                <p class="text-muted">
+                    Keep track of upcoming interviews and
+                    important dates.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h4>
+                    📈 Analyze Progress
+                </h4>
+
+                <p class="text-muted">
+                    Visualize your application pipeline
+                    with useful statistics.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
